@@ -149,6 +149,105 @@
 - Administratörsåtkomst fungerar ännu inte som avsett och ska undersökas separat med gruppen. Duplicerade routes i `App.tsx` identifierades och ska också tas upp med gruppen innan de ändras.
 
 
+### Måndag 26 oktober 2026
+
+**Vad jag arbetade med**
+
+* Påbörjade arbetet med FE-43 under Sprint 7.
+* Planerade att skapa README-filer för webshopprojektets olika repositories.
+* Gick igenom vilken information som behövde dokumenteras för Auth Service, Product Service, Order Service, Gateway och Frontend.
+* Planerade dokumentation av projektens ansvarsområden, tekniker, databaser, miljövariabler, portar och instruktioner för uppstart.
+
+**Resultat**
+
+* Lade grunden för dokumentationsarbetet för hela webshopprojektet.
+* Identifierade vilken information som behövde finnas med i respektive README-fil.
+
+
+### Tisdag 27 oktober 2026
+
+**Vad jag arbetade med**
+
+* Fortsatte arbetet med FE-36 för att återställa inloggad användare efter att sidan laddas om.
+* Arbetade med autentiseringsflödet mellan frontend, Gateway och Auth Service.
+* Undersökte hur `/auth/me` används för att kontrollera om användarens session fortfarande är giltig.
+* Arbetade med `AuthProvider` och `ProtectedRoute` i frontend.
+* Lade till `AuthProvider` i `main.tsx`.
+* Arbetade med Gatewayens routning till Product Service och undersökte problem med produktanrop.
+
+**Problem och lösning**
+
+* Undersökte problem med att hämta produkter genom Gateway.
+* Upptäckte att routningen använde `/api/products` i stället för `/products`.
+* Korrigerade routningen och testade att produktlistan kunde hämtas.
+* Undersökte även ett HTTP 405-fel vid POST-anrop mot `/gateway/products`.
+
+**Resultat och testning**
+
+* Testade administratörsinloggning, återställning av session efter F5, rollbaserad åtkomst och utloggning. Samtliga fyra tester fungerade.
+* Verifierade att Gateway kunde hämta produkter från Product Service.
+* Kom vidare med autentiseringsflödet och integrationen mellan frontend och backend.
+
+
+### Onsdag 28 oktober 2026
+
+**Vad jag arbetade med**
+
+* Arbetade med dokumentationen för Auth Server och Product Service.
+* Gick igenom projektens konfigurationer, beroenden och miljövariabler.
+* Kontrollerade databasinställningarna för respektive tjänst.
+* Undersökte hur SQL-initialiseringen fungerar i Product Service.
+* Kontrollerade vilka filer och konfigurationsinställningar som behövde beskrivas i README-filerna.
+
+**Resultat**
+
+* Kom vidare med dokumentationen för Auth Server och Product Service.
+* Fick en tydligare bild av hur respektive backendtjänst är konfigurerad och startas.
+
+
+### Torsdag 29 oktober 2026
+
+**Vad jag arbetade med**
+
+* Arbetade vidare med FE-43 och dokumentationen för webshopprojektets backendtjänster.
+* Färdigställde och sparade README-filerna för Auth Service, Product Service och Order Service.
+* Gick igenom Gateway-projektets konfiguration och kontrollerade att Maven Wrapper-filerna `mvnw` och `mvnw.cmd` finns.
+* Dokumenterade Gatewayens port, miljövariabler och cookie-inställningar.
+* Påbörjade genomgången av `GatewayController` för att kontrollera vilka API-endpoints som skulle dokumenteras.
+
+**Resultat**
+
+* README-filerna för Auth Service, Product Service och Order Service blev färdiga och sparade.
+* Kom vidare med dokumentationen för Gateway och dess konfiguration.
+
+
+### Fredag 30 oktober 2026
+
+**Vad jag arbetade med**
+
+* Färdigställde arbetet med att spara kundvagnen separat för varje inloggad användare.
+* Använde `sessionStorage` och användarens `subject` för att skilja kundvagnarna åt.
+* Arbetade med återställning av kundvagnen efter siduppdatering och återinloggning.
+* Testade kundvagnens funktionalitet med olika användare.
+* Uppdaterade README-filerna för Frontend, Gateway och Order Service.
+* Dokumenterade frontendens autentisering, kundvagn och beställningsflöde.
+* Uppdaterade Gateway-dokumentationen med order-endpoints och kommunikation med Order Service.
+* Kompletterade Order Service-dokumentationen med rollbaserad åtkomst och orderhantering.
+
+**Problem och lösning**
+
+* Tidigare kunde olika användare få tillgång till samma sparade kundvagn.
+* Ändrade lagringen så att varje användare får en separat kundvagn baserad på sitt `subject`.
+
+**Resultat och testning**
+
+* Testade att kundvagnen återställs efter F5.
+* Testade att olika användare har separata kundvagnar.
+* Verifierade att kundvagnen återställs efter utloggning och återinloggning.
+* Samtliga tester av kundvagnens nya funktionalitet fungerade.
+* Uppdaterade och sparade README-filerna för Frontend, Gateway och Order Service.
+* README-dokumentationen för samtliga sex delar av webshopprojektet är nu uppdaterad.
+
 ---
 
 ## Veckovisa sammanfattningar
@@ -193,6 +292,34 @@ Jag arbetade vidare med autentisering genom Gateway och frontendens återställn
 
 **Problem och resultat**
 Jag verifierade att användaren stannar kvar på `/welcome` efter omladdning och att `/auth/me` returnerar användarinformation när sessionen är giltig. Efter utloggning skickas användaren till `/login`, och `/auth/me` svarar `401 Unauthorized` när sessionen saknas. Ändringarna för FE-36 är committade på `feature/keep-login`. Administratörsåtkomst och duplicerade routes i `App.tsx` återstår att diskutera och hantera separat.
+
+
+### Vecka 44 – 26 oktober–1 november 2026
+
+**Vad jag arbetade med**
+
+Den här veckan arbetade jag med flera delar av webshopprojektet. Jag började med FE-43 under Sprint 7, som handlar om att skapa och uppdatera README-dokumentation för projektets olika repositories.
+
+Jag fortsatte även arbetet med autentiseringen mellan frontend, Gateway och Auth Server. Jag arbetade med återställning av inloggad användare efter siduppdatering, `AuthProvider` och `ProtectedRoute`. Jag testade även inloggning, utloggning, sessionsåterställning och rollbaserad åtkomst.
+
+Jag arbetade vidare med Gateway och dess kommunikation med Product Service och Order Service. Jag undersökte och korrigerade problem med routningen till Product Service. Jag arbetade även med order-endpoints för att kunna skapa och hämta beställningar genom Gateway.
+
+I Order Service arbetade jag med hämtning av beställningar baserat på användarens roll. Vanliga användare ska endast kunna se sina egna beställningar, medan administratörer ska kunna hämta samtliga beställningar.
+
+I frontend fortsatte jag utvecklingen av kundvagnen. Jag förbättrade lagringen så att varje inloggad användare får en egen kundvagn med hjälp av `sessionStorage` och användarens `subject`.
+
+Jag arbetade också med dokumentationen för samtliga sex delar av webshopprojektet: Auth Server, Product Service, Email Service, Gateway, Order Service och Frontend.
+
+**Problem och resultat**
+
+Under arbetet med Gateway upptäckte jag problem med routningen till Product Service. Jag korrigerade sökvägen och verifierade att produktlistan kunde hämtas genom Gateway.
+
+Jag testade även orderhanteringen och kontrollerade att en vanlig användare endast får sina egna beställningar och att en administratör kan se samtliga beställningar.
+
+Ett annat problem var att kundvagnen tidigare kunde delas mellan olika användare. Jag ändrade därför lagringen så att varje användare får en separat kundvagn. Jag testade att innehållet finns kvar efter F5, att olika användare inte delar kundvagn och att rätt kundvagn återställs efter utloggning och återinloggning.
+
+Veckans dokumentationsarbete resulterade i att README-filerna för samtliga sex repositories uppdaterades och sparades. Dokumentationen beskriver respektive tjänsts ansvarsområde, tekniker, konfiguration och funktionalitet.
+
 
 ---
 
