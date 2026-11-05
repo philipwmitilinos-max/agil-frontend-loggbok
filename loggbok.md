@@ -134,6 +134,22 @@ Ett annat problem var att kundvagnen tidigare kunde delas mellan olika användar
 
 Veckans dokumentationsarbete resulterade i att README-filerna för samtliga sex repositories uppdaterades och sparades. Dokumentationen beskriver respektive tjänsts ansvarsområde, tekniker, konfiguration och funktionalitet.
 
+### Vecka 45 – 2–8 november 2026
+
+**Vad jag arbetade med**
+
+Den här veckan fokuserade jag på att förbereda och genomföra gruppens presentation av webbshopprojektet.
+
+Tisdagen den 3 november deltog jag i planeringen av presentationen tillsammans med gruppen. Vi gick igenom hur presentationen skulle delas upp mellan gruppmedlemmarna och planerade upplägget i Google Slides. Presentationen skulle vara totalt 20 minuter. Min del handlade om produktvisning, produktdetaljer och kundvagn.
+
+Onsdagen den 4 november fortsatte jag med att förbereda min del av presentationen. Jag gick igenom slides och tog fram kodexempel från bland annat `productService.ts`, `ProductsPage.tsx` och `Cart.tsx` för att visa hur funktionerna är implementerade. Jag gick igenom hur produkterna hämtas från Product Service, hur lagerkontroller fungerar och hur kundvagnen hanterar antal, radpriser och totalsumma. Jag sammanställde även ett separat dokument med förklaringar och kodexempel som stöd inför presentationen.
+
+**Resultat och presentation**
+
+Torsdagen den 5 november genomförde gruppen presentationen av webbshopprojektet. Jag presenterade mina delar av frontendutvecklingen och visade hur de olika produkt- och kundvagnsfunktionerna fungerar.
+
+Presentationens genomförande gick bra. Jag hade även förberett ett separat manus som stöd, men använde det inte under själva presentationen. Gruppens presentationsmaterial användes vid redovisningen.
+
 ---
 
 ## Samarbete och agilt arbetssätt
@@ -645,3 +661,48 @@ Jag har inte tillräckligt med dokumentation för att säkert ange vilka sprint 
 - Samtliga tester av kundvagnens nya funktionalitet fungerade.
 - Uppdaterade och sparade README-filerna för Frontend, Gateway och Order Service.
 - README-dokumentationen för samtliga sex delar av webshopprojektet är nu uppdaterad.
+
+### Tisdag 3 november 2026
+
+**Vad jag arbetade med**
+
+- Deltog i planeringen av gruppens presentation av webbshopprojektet.
+- Gick igenom hur presentationen skulle delas upp mellan gruppmedlemmarna.
+- Planerade min del av presentationen, som omfattade produkter, produktdetaljer och kundvagn.
+- Arbetade med upplägget för presentationen i Google Slides.
+- Diskuterade tidsfördelningen för presentationen, som skulle vara totalt 20 minuter.
+
+**Resultat**
+
+- Gruppen fick en tydligare struktur för presentationen.
+- Ansvarsområdena för presentationen fördelades mellan gruppmedlemmarna.
+
+### Onsdag 4 november 2026
+
+**Vad jag arbetade med**
+
+- Förberedde min del av gruppens presentation av webbshopprojektet.
+- Gick igenom slides om produktvisning, produktdetaljer, lagersaldo och kundvagn.
+- Granskade kodexempel från `productService.ts`, `ProductsPage.tsx` och `Cart.tsx`.
+- Skapade ett separat dokument med förklaringar till min del av presentationen.
+- Förberedde kodexempel som visar hur kundvagnen beräknar radpris och totalsumma med `map()` och `reduce()`.
+
+**Resultat**
+
+- Färdigställde mitt presentationsmaterial och mitt separata manus inför gruppens redovisning den 5 november.
+
+### Torsdag 5 november 2026
+
+**Vad jag arbetade med**
+
+- Deltog i gruppens presentation av webbshopprojektet.
+- Presenterande min del av frontendutvecklingen, som omfattade produktvisning, produktdetaljer, lagersaldo och kundvagn.
+- Visade hur frontend hämtar produkter från Product Service och hur produkterna presenteras med React-komponenter.
+- Gick igenom funktioner för produktsökning, kategorifiltrering, lagerkontroller och kundvagnens prisberäkningar.
+- Förklarade hur kundvagnen hanterar produkter, antal och totalsumma samt hur innehållet sparas per användare i `sessionStorage`.
+
+**Resultat**
+
+- Gruppen genomförde presentationen av webbshopprojektet.
+- Jag fick möjlighet att visa och redogöra för de delar av frontend som jag hade arbetat med.
+- Presentationen gick bra.
